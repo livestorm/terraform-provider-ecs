@@ -18,11 +18,14 @@ After installing golang on your system, run `go build -o terraform-provider-ecs`
 
 ## How to install it ?
 
-Copy the binary `terraform-provider-ecs` in the `terraform.d/plugins/linux_amd64` directory of your terraform module.
+You can download latest release from this [page](https://github.com/livestorm/terraform-provider-ecs/releases).
 
-NOTE1: On you local machine, the directory is `.terraform` instead of `terraform.d`.
+Copy the binary `terraform-provider-ecs` in the `~/terraform.d/plugins/$ARCH` directory.
 
-NOTE2: If you are on macOS the architecture is `darwin_amd64` instead of `linux_amd64`.
+`$ARCH` can be one of the following:
+- darwin_amd64
+- darwin_arm64
+- linux_amd64
 
 ## Warning
 

@@ -1,0 +1,46 @@
+on:
+  release:
+    types: [created]
+
+jobs:
+  release-darwin-arm64:
+    name: release darwin/arm64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: wangyoucao577/go-release-action@v1.16
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goos: darwin
+        goarch: arm64
+        md5sum: false
+        project_path: .
+        binary_name: terraform-provider-ecs
+
+  release-darwin-amd64:
+    name: release darwin/amd64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: wangyoucao577/go-release-action@v1.16
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goos: darwin
+        goarch: amd64
+        md5sum: false
+        project_path: .
+        binary_name: terraform-provider-ecs
+
+  release-linux-amd64:
+    name: release linux/amd64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: wangyoucao577/go-release-action@v1.16
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goos: linux
+        goarch: amd64
+        md5sum: false
+        project_path: .
+        binary_name: terraform-provider-ecs
